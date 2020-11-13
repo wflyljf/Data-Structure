@@ -13,7 +13,7 @@ extern "C" {
 /* 定义m序(阶)B 树的最小度数BTree_D=ceil(m)*/
 /// 在这里定义每个节点中关键字的最大数目为:2 * BTree_D - 1，即序(阶)：2 * BTree_D.
 #define BTree_D        3
-#define ORDER          (BTree_D * 2 + 1) //定义为4阶B-tree,2-3-4树。最简单为3阶B-tree,2-3树。
+#define ORDER          (BTree_D * 2) //定义为4阶B-tree,2-3-4树。最简单为3阶B-tree,2-3树。
 //#define ORDER        (BTree_T * 2-1)	//最简单为3阶B-tree,2-3树。
  
 	typedef int KeyType;
