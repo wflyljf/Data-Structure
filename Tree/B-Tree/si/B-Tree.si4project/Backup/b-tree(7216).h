@@ -19,7 +19,9 @@ extern "C" {
 	typedef int KeyType;
 	typedef struct BTNode{
 		int keynum;                        /// 结点中关键字的个数，keynum <= BTree_N
-		KeyType key[ORDER-1];    		   /// 关键字向量为key[0..keynum - 1]
+		//KeyType key[ORDER-1];     //wfly tmp del           /// 关键字向量为key[0..keynum - 1]
+		KeyType key[ORDER-1];     //wfly tmp del           /// 关键字向量为key[0..keynum - 1]
+		
 		struct BTNode* child[ORDER];        /// 孩子指针向量为child[0..keynum]
 		bool isLeaf;                    /// 是否是叶子节点的标志
 	}BTNode;

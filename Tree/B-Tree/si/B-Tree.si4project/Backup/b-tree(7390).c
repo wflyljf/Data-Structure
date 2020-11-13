@@ -574,7 +574,7 @@ void BTree_create(BTree* tree, const KeyType* data, int length)
     int i;
  
 #ifdef DEBUG_BTREE
-    printf("\n 开始创建 %d 阶 B-树，关键字为:\n" , ORDER - 1);
+    printf("\n 开始创建 %d 阶 B-树，关键字为:\n" ， ORDER - 1);
     for (i = 0; i < length; i++) {
         printf(" %c ", data[i]);
     }

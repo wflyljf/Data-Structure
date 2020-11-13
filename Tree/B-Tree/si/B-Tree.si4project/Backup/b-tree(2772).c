@@ -107,8 +107,7 @@ void BTree_split_child(BTNode* parent, int index, BTNode* node)
     }
  
     newNode->isLeaf = node->isLeaf;
-    //newNode->keynum = BTree_D - 1;   //wfly tmp del
-    newNode->keynum = (ORDER-1)/2;   		//wfly tmp add
+    newNode->keynum = BTree_D - 1;   
  
     // 拷贝 node 后半部分关键字,然后将node后半部分置为0。
     for (i = 0; i < newNode->keynum; ++i){
@@ -223,7 +222,7 @@ void BTree_insert(BTree* tree, KeyType key)
     }
  
     // 根节点已满，插入前需要进行分裂调整
-    if (root->keynum == (ORDER-1)) {		
+    if (root->keynum == (ORDER-1)) {		//wfly tmp del
         // 产生新节点当作根
         node = (BTNode*)calloc(sizeof(BTNode), 1);
         if (!node) {
@@ -574,7 +573,7 @@ void BTree_create(BTree* tree, const KeyType* data, int length)
     int i;
  
 #ifdef DEBUG_BTREE
-    printf("\n 开始创建 %d 阶 B-树，关键字为:\n" , ORDER - 1);
+    printf("\n 开始创建 B-树，关键字为:\n");
     for (i = 0; i < length; i++) {
         printf(" %c ", data[i]);
     }
